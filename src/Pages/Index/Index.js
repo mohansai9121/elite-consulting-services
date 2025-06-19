@@ -5,6 +5,7 @@ import CourseCard from "../../Components/CourseCard/CourseCard";
 // import { Button } from "@/components/ui/button"; // Replace with local import if needed
 import { Link } from "react-router-dom";
 import { Check, Code } from "lucide-react";
+import "./Index.css";
 
 // If you're not using a Button component from a design system, use a simple button
 // or define/import it locally:
@@ -21,40 +22,40 @@ const Index = () => {
       id: "data-analysis",
       title: "Data Analysis & Visualization",
       description:
-        "Master data analysis with Python, pandas, and advanced visualization techniques",
+        "Master data analysis with Excel, Python and advanced visualization techniques",
       duration: "12 weeks",
       level: "Intermediate",
-      instructor: "Dr. Sarah Chen",
-      price: "$899",
+      instructor: "Salman Khan",
+      price: "₹1999",
       image:
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
-      technologies: ["Python", "Pandas", "Matplotlib", "Seaborn"],
+      technologies: ["Excel", "Python", "Pandas", "Matplotlib", "Seaborn"],
     },
     {
       id: "web-development",
       title: "Full-Stack Web Development",
       description:
-        "Build modern web applications with React, Node.js, and cloud deployment",
-      duration: "16 weeks",
+        "Build modern web applications with React, Node.js, and deployment",
+      duration: "12 weeks",
       level: "Beginner",
-      instructor: "Alex Rodriguez",
-      price: "$1299",
+      instructor: "Mohan Sai",
+      price: "₹1999",
       image:
         "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop",
-      technologies: ["React", "Node.js", "MongoDB", "AWS"],
+      technologies: ["React", "Node.js", "MongoDB", "AWS", "FirebaseDB"],
     },
     {
       id: "python-programming",
       title: "Python Programming Mastery",
       description:
         "From basics to advanced Python programming with real-world projects",
-      duration: "10 weeks",
+      duration: "8 weeks",
       level: "Beginner",
-      instructor: "Michael Johnson",
-      price: "$699",
+      instructor: "Mohan Sai",
+      price: "₹1499",
       image:
         "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=400&h=300&fit=crop",
-      technologies: ["Python", "Django", "Flask", "APIs"],
+      technologies: ["Python", "Django", "Flask", "APIs", "Data Structures"],
     },
   ];
 
@@ -72,16 +73,17 @@ const Index = () => {
       <Navigation />
       <Home />
 
-      {/* Features Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-fade-in">
+            <br />
             <h2 className="text-4xl font-bold text-gray-900 mb-4 font-poppins">
-              Why Choose TechElevate Academy?
+              Why Choose Elite Consulting Services?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We're committed to providing the highest quality education and
-              support to help you achieve your career goals in technology.
+              We're committed to providing the high quality education through
+              practical learning and support to help you achieve your career
+              goals.
             </p>
           </div>
 
@@ -100,17 +102,17 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Featured Courses */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-fade-in">
+            <br />
             <h2 className="text-4xl font-bold text-gray-900 mb-4 font-poppins">
               Featured Courses
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover our most popular courses designed to accelerate your
-              career in the most in-demand tech fields.
+              Discover our popular courses designed to accelerate your career.
             </p>
+            <br />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
@@ -125,19 +127,19 @@ const Index = () => {
             ))}
           </div>
 
-          <div className="text-center animate-fade-in">
-            <Link to="/courses" className="inline-flex items-center gap-2 bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition hover-scale">
-              <Code className="w-5 h-5" />
+          <div className="view-courses-div">
+            <Link to="/courses" className="view-courses-btn">
+              <Code className="course-card-btn-icon" />
               View All Courses
             </Link>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="animate-fade-in">
+            <br />
             <h2 className="text-4xl font-bold mb-4 font-poppins">
               Ready to Start Your Tech Journey?
             </h2>
@@ -145,19 +147,14 @@ const Index = () => {
               Join thousands of successful students who have transformed their
               careers with our expert-led courses and personalized support.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/courses"
-                className="bg-white text-blue-700 px-6 py-3 text-lg font-medium rounded hover:bg-gray-100 transition"
-              >
+            <div className="advisory-btns-div">
+              <Link to="/courses" className="advisory-btn-secondary">
                 Start Learning Today
               </Link>
-              <Link
-                to="/contact"
-                className="border border-white px-6 py-3 text-lg font-medium rounded hover:bg-white hover:text-indigo-600 transition"
-              >
+              <Link to="/contact" className="advisory-btn-primary">
                 Talk to an Advisor
               </Link>
+              <br/>
             </div>
           </div>
         </div>

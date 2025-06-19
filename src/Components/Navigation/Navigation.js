@@ -26,10 +26,11 @@ const Navigation = () => {
   return (
     <nav className={`navigation ${scrolled ? 'scrolled' : 'transparent'}`}>
       <div className="nav-container">
-        <div className="nav-content"><Link to="/" className="logo">
+        <div className="nav-content">
+          <Link to="/" className="logo">
             <Book className="logo-icon" />
             <span className="logo-text">
-              TechElevate
+              Elite Consulting Services
             </span>
           </Link>
 
@@ -38,7 +39,8 @@ const Navigation = () => {
             {navItems.map((item) => (
               <Link
                 key={item.name}
-                to={item.path}className={`nav-link ${
+                to={item.path}
+                className={`nav-link ${
                   location.pathname === item.path
                   ? "active": scrolled ? "scrolled"
                     : "light"
@@ -48,8 +50,9 @@ const Navigation = () => {
               </Link>
             ))}
             <button className="get-started-btn">
-              Get Started</button>
-              </div>
+              Get Started
+            </button>
+          </div>
 
           {/* Mobile menu button */}
           <div className="mobile-menu-btn">
@@ -66,7 +69,8 @@ const Navigation = () => {
               {navItems.map((item) => (
                 <Link
                   key={item.name}
-                  to={item.path}className={`mobile-nav-link ${
+                  to={item.path}
+                  className={`mobile-nav-link ${
                     location.pathname === item.path ? "active" : ""
                   }`}
                   onClick={() => setIsOpen(false)}

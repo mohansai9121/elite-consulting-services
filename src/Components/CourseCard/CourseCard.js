@@ -33,9 +33,9 @@ const CourseCard = ({
           alt={title}
           className="course-card-image"
         />
-        <div className="course-card-level">
+        {/*<div className="course-card-level">
           {level}
-        </div>
+        </div>*/}
       </div>
       <div className="course-card-header">
         <h3 className="course-card-title">

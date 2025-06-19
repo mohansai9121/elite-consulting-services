@@ -1,0 +1,54 @@
+.view-courses-div{
+    margin: 12px 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.view-courses-btn{
+    text-decoration: none;
+    font-size: 27px;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(to right top, purple, blue);
+    padding: 3px 9px;
+    border-radius: 9px;
+    transition: all 0.2s ease-in;
+}
+.view-courses-btn:hover{
+    transform: scale(1.05);
+}
+.advisory-btns-div{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+.advisory-btn-primary{
+    border: 3px solid purple;
+    padding: 5px 15px;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+}
+.advisory-btn-primary:hover{
+    transform: scale(1.02);
+    background: linear-gradient(to right, #620bb4, #8e45d3);
+    border: none;
+    color: white;
+}
+.advisory-btn-secondary{
+    border: 3px solid orange;
+    padding: 5px 15px;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+}
+.advisory-btn-secondary:hover{
+    transform: scale(1.02);
+    background: linear-gradient(to right, #ea4c15, #ea7015);
+    border: none;
+    color: white;
+}

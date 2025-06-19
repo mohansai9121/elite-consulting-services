@@ -1,33 +1,31 @@
 import { useParams, Link } from "react-router-dom";
 import Navigation from "../../Components/Navigation/Navigation";
 import Footer from "../../Components/Footer/Footer";
-//import { Button } from "@/components/ui/button";
-//import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calendar, User, Code, Check, Book } from "lucide-react";
+import dataAnalysis from "../../assets/data-analysis.jpg";
+import webDevelopment from "../../assets/web-development.jpg";
+import python from "../../assets/python-programming.jpg";
+import dataStructures from "../../assets/data-structures.jpg";
+import typing from "../../assets/typing.jpg";
+import english from "../../assets/speaking.jpg";
+import interview from "../../assets/interview.webp";
+import machineLearning from "../../assets/machine-learning.webp";
+import "./CourseDetail.css"; // Ensure this file contains your converted CSS
 
 const CourseDetail = () => {
   const { courseId } = useParams();
 
-  // In a real app, this would come from an API or database
   const courseData = {
     "data-analysis": {
       title: "Data Analysis & Visualization",
       description:
-        "Master the art of data analysis with this comprehensive course covering Python, pandas, NumPy, and advanced visualization techniques. Learn to extract insights from complex datasets and create compelling visual stories.",
+        "Master data analysis with Excel, Python, pandas, NumPy, and advanced visualization techniques using Matplotlib and Seaborn",
       duration: "12 weeks",
       level: "Intermediate",
-      instructor: "Dr. Sarah Chen",
-      price: "$899",
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
-      technologies: [
-        "Python",
-        "Pandas",
-        "Matplotlib",
-        "Seaborn",
-        "NumPy",
-        "Jupyter",
-      ],
+      instructor: "Salman Khan",
+      price: "₹1999",
+      image: dataAnalysis,
+      technologies: ["Excel", "Python", "Pandas", "Matplotlib", "Seaborn"],
       prerequisites: ["Basic Python knowledge", "High school mathematics"],
       learning_objectives: [
         "Master Python for data manipulation and analysis",
@@ -38,86 +36,232 @@ const CourseDetail = () => {
         "Present data insights effectively",
       ],
       curriculum: [
-        { week: 1, topic: "Python Fundamentals for Data Science" },
+        { week: 1, topic: "Excel & Python Fundamentals" },
         { week: 2, topic: "Data Manipulation with Pandas" },
-        { week: 3, topic: "Data Cleaning and Preprocessing" },
+        { week: 3, topic: "Data Cleaning & Preprocessing" },
         { week: 4, topic: "Exploratory Data Analysis" },
         { week: 5, topic: "Statistical Analysis Basics" },
-        { week: 6, topic: "Data Visualization with Matplotlib" },
-        { week: 7, topic: "Advanced Visualization with Seaborn" },
-        { week: 8, topic: "Interactive Visualizations" },
+        { week: 6, topic: "Visualization with Matplotlib" },
+        { week: 7, topic: "Visualization with Seaborn" },
+        { week: 8, topic: "Interactive Charts & Dashboards" },
         { week: 9, topic: "Time Series Analysis" },
         { week: 10, topic: "Hypothesis Testing" },
         { week: 11, topic: "Dashboard Creation" },
-        { week: 12, topic: "Final Project and Presentation" },
+        { week: 12, topic: "Final Project & Presentation" },
       ],
     },
     "web-development": {
       title: "Full-Stack Web Development",
       description:
-        "Build modern, responsive web applications from scratch using the latest technologies. This comprehensive course covers both frontend and backend development with React, Node.js, and cloud deployment.",
-      duration: "16 weeks",
-      level: "Beginner",
-      instructor: "Alex Rodriguez",
-      price: "$1299",
-      image:
-        "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop",
-      technologies: [
-        "React",
-        "Node.js",
-        "Express",
-        "MongoDB",
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "AWS",
-      ],
-      prerequisites: [
-        "Basic computer literacy",
-        "No prior programming experience required",
-      ],
+        "Build modern web applications with React, Node.js, Express, and deploy to cloud platforms",
+      duration: "12 weeks",
+      level: "Intermediate",
+      instructor: "Mohan Sai",
+      price: "₹1999",
+      image: webDevelopment,
+      technologies: ["React", "Node.js", "MongoDB", "AWS"],
+      prerequisites: ["Basic computer literacy", "No prior programming experience"],
       learning_objectives: [
-        "Build responsive websites with HTML, CSS, and JavaScript",
-        "Master React for modern frontend development",
-        "Create RESTful APIs with Node.js and Express",
-        "Work with databases using MongoDB",
-        "Implement user authentication and security",
-        "Deploy applications to cloud platforms",
+        "Build responsive UIs using HTML, CSS, JS",
+        "Master React and its ecosystem",
+        "Create REST APIs with Node.js & Express",
+        "Manage data with MongoDB",
+        "Implement user authentication",
+        "Deploy apps to AWS cloud",
       ],
       curriculum: [
-        { week: 1, topic: "HTML5 and Semantic Markup" },
-        { week: 2, topic: "CSS3 and Responsive Design" },
+        { week: 1, topic: "HTML5 & Semantic Markup" },
+        { week: 2, topic: "CSS3 & Responsive Design" },
         { week: 3, topic: "JavaScript Fundamentals" },
-        { week: 4, topic: "DOM Manipulation and Events" },
+        { week: 4, topic: "DOM Manipulation & Events" },
         { week: 5, topic: "Introduction to React" },
-        { week: 6, topic: "React Components and Props" },
-        { week: 7, topic: "State Management and Hooks" },
-        { week: 8, topic: "React Router and Navigation" },
-        { week: 9, topic: "Node.js and NPM" },
-        { week: 10, topic: "Express.js and RESTful APIs" },
-        { week: 11, topic: "MongoDB and Database Design" },
-        { week: 12, topic: "Authentication and Security" },
-        { week: 13, topic: "Testing and Debugging" },
-        { week: 14, topic: "Deployment with AWS" },
-        { week: 15, topic: "Performance Optimization" },
-        { week: 16, topic: "Final Project Development" },
+        { week: 6, topic: "Components & Props" },
+        { week: 7, topic: "State Management & Hooks" },
+        { week: 8, topic: "React Router" },
+        { week: 9, topic: "Node.js & NPM" },
+        { week: 10, topic: "Express & RESTful APIs" },
+        { week: 11, topic: "MongoDB Basics" },
+        { week: 12, topic: "User Authentication" },
       ],
     },
-    // Add more course details as needed
+    "python-programming": {
+      title: "Python Programming Mastery",
+      description:
+        "From basics to advanced Python programming with real-world projects and frameworks",
+      duration: "12 weeks",
+      level: "Beginner",
+      instructor: "Mohan Sai",
+      price: "₹1499",
+      image: python,
+      technologies: ["Python", "Django", "Flask", "APIs", "Data Structures"],
+      prerequisites: ["No prior programming experience"],
+      learning_objectives: [
+        "Understand Python syntax and structures",
+        "Build web apps with Django/Flask",
+        "Implement RESTful APIs",
+        "Master data structures in Python",
+        "Work on real-world projects",
+      ],
+      curriculum: [
+        { week: 1, topic: "Python Basics & Syntax" },
+        { week: 2, topic: "Data Structures in Python" },
+        { week: 3, topic: "Functions & Modules" },
+        { week: 4, topic: "Error Handling & File I/O" },
+        { week: 5, topic: "Working with APIs" },
+        { week: 6, topic: "Intro to Django" },
+        { week: 7, topic: "Django Models & Views" },
+        { week: 8, topic: "Intro to Flask" },
+        { week: 9, topic: "Flask Routing & Templates" },
+        { week: 10, topic: "Project with Django/Flask" },
+        { week: 11, topic: "Testing & Debugging" },
+        { week: 12, topic: "Final Capstone Project" },
+      ],
+    },
+    "data-structures": {
+      title: "Data Structures & Algorithms",
+      description:
+        "Master fundamental computer science concepts essential for technical interviews",
+      duration: "8 weeks",
+      level: "Intermediate",
+      instructor: "Mohan Sai",
+      price: "₹1499",
+      image: dataStructures,
+      technologies: ["Python", "C", "Algorithms"],
+      prerequisites: ["Basic programming experience"],
+      learning_objectives: [
+        "Understand core data structures",
+        "Implement algorithms in code",
+        "Solve algorithmic problems",
+        "Prepare for coding interviews",
+      ],
+      curriculum: [
+        { week: 1, topic: "Arrays & Linked Lists" },
+        { week: 2, topic: "Stacks & Queues" },
+        { week: 3, topic: "Trees" },
+        { week: 4, topic: "Graphs" },
+        { week: 5, topic: "Sorting Algorithms" },
+        { week: 6, topic: "Searching Algorithms" },
+        { week: 7, topic: "Dynamic Programming" },
+        { week: 8, topic: "Mock Interviews" },
+      ],
+    },
+    "typing-course": {
+      title: "Professional Typing & Productivity",
+      description:
+        "Increase your typing speed and accuracy while learning productivity tools and shortcuts",
+      duration: "8 weeks",
+      level: "Beginner",
+      instructor: "Salman Khan",
+      price: "₹1999",
+      image: typing,
+      technologies: ["Typing", "Shortcuts", "Productivity"],
+      prerequisites: ["Basic computer skills"],
+      learning_objectives: [
+        "Improve typing speed & accuracy",
+        "Learn keyboard shortcuts",
+        "Master productivity tools",
+      ],
+      curriculum: [
+        { week: 1, topic: "Typing Basics" },
+        { week: 2, topic: "Accuracy & Speed Drills" },
+        { week: 3, topic: "Shortcuts & Efficiency" },
+        { week: 4, topic: "Productivity Tools" },
+        { week: 5, topic: "Advanced Typing Drills" },
+        { week: 6, topic: "Ergonomics & Workflow" },
+        { week: 7, topic: "Typing Speed Challenges" },
+        { week: 8, topic: "Final Productivity Assessment" },
+      ],
+    },
+    "english-communication": {
+      title: "Business English & Communication",
+      description:
+        "Improve your professional English communication skills for the global tech industry",
+      duration: "4 weeks",
+      level: "Beginner",
+      instructor: "Salman Khan",
+      price: "₹999",
+      image: english,
+      technologies: ["English", "Communication", "Presentation"],
+      prerequisites: ["Intermediate English"],
+      learning_objectives: [
+        "Enhance verbal/written English skills",
+        "Deliver effective presentations",
+        "Handle business conversations",
+      ],
+      curriculum: [
+        { week: 1, topic: "Business Vocabulary" },
+        { week: 2, topic: "Professional Writing" },
+        { week: 3, topic: "Presentation Skills" },
+        { week: 4, topic: "Mock Business Meetings" },
+      ],
+    },
+    "interview-prep": {
+      title: "Technical Interview Preparation",
+      description:
+        "Ace your tech interviews with coding challenges, system design, and behavioral questions",
+      duration: "4 weeks",
+      level: "Intermediate",
+      instructor: "Mohan Sai",
+      price: "₹999",
+      image: interview,
+      technologies: ["Algorithms", "System Design", "Coding"],
+      prerequisites: ["Comfortable with coding basics"],
+      learning_objectives: [
+        "Practice coding challenges",
+        "Learn system design basics",
+        "Master behavioral responses",
+      ],
+      curriculum: [
+        { week: 1, topic: "Coding Problem Drills" },
+        { week: 2, topic: "System Design Fundamentals" },
+        { week: 3, topic: "Behavioral Interview Prep" },
+        { week: 4, topic: "Mock Interview Simulations" },
+      ],
+    },
+    "machine-learning": {
+      title: "Machine Learning Fundamentals",
+      description:
+        "Learn ML algorithms, neural networks, and build intelligent applications from scratch",
+      duration: "12 weeks",
+      level: "Advanced",
+      instructor: "Mohan Sai",
+      price: "₹1499",
+      image: machineLearning,
+      technologies: ["Python", "TensorFlow", "Scikit-learn", "Neural Networks"],
+      prerequisites: ["Python programming", "Linear algebra basics"],
+      learning_objectives: [
+        "Understand ML models & algorithms",
+        "Train neural networks from scratch",
+        "Evaluate model performance",
+        "Build end-to-end ML pipelines",
+      ],
+      curriculum: [
+        { week: 1, topic: "Introduction to ML Concepts" },
+        { week: 2, topic: "Regression & Classification" },
+        { week: 3, topic: "Decision Trees & Ensembles" },
+        { week: 4, topic: "Clustering Techniques" },
+        { week: 5, topic: "Neural Network Basics" },
+        { week: 6, topic: "Deep Learning with TensorFlow" },
+        { week: 7, topic: "Scikit-learn Workflows" },
+        { week: 8, topic: "Model Evaluation" },
+        { week: 9, topic: "Overfitting & Regularization" },
+        { week: 10, topic: "Hyperparameter Tuning" },
+        { week: 11, topic: "ML Project Development" },
+        { week: 12, topic: "Deployment of ML Models" },
+      ],
+    },
   };
 
   const course = courseData[courseId];
 
   if (!course) {
     return (
-      <div className="min-h-screen">
+      <div className="course-detail-container">
         <Navigation />
         <div className="pt-24 text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Course Not Found
-          </h1>
+          <h1 className="hero-title">Course Not Found</h1>
           <Link to="/courses">
-            <button>Back to Courses</button>
+            <button className="cta-button">Back to Courses</button>
           </Link>
         </div>
         <Footer />
@@ -126,53 +270,35 @@ const CourseDetail = () => {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="course-detail-container">
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="hero-section">
+        <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-slide-in-left">
-              <h1 className="text-5xl font-bold text-gray-900 mb-6 font-poppins">
-                {course.title}
-              </h1>
-              <p className="text-xl text-gray-600 mb-8">{course.description}</p>
-
-              <div className="flex flex-wrap gap-4 mb-8">
-                <div className="flex items-center gap-2 text-gray-600">
-                  <Calendar className="w-5 h-5" />
-                  <span>{course.duration}</span>
-                </div>
-                <div className="flex items-center gap-2 text-gray-600">
-                  <User className="w-5 h-5" />
-                  <span>{course.instructor}</span>
-                </div>
-                <div className="flex items-center gap-2 text-gray-600">
-                  <Book className="w-5 h-5" />
-                  <span>{course.level}</span>
-                </div>
+            <div>
+              <h1 className="hero-title">{course.title}</h1>
+              <p className="hero-description">{course.description}</p>
+              <div className="hero-meta">
+                <div><Calendar /> {course.duration}</div>
+                <div><User /> {course.instructor}</div>
+                <div><Book /> {course.level}</div>
               </div>
-
-              <div className="text-3xl font-bold text-primary mb-8">
-                {course.price}
-              </div>
-
-              <div className="flex gap-4">
-                <button size="lg" className="hover-scale hover-glow">
-                  Enroll Now
-                </button>
-                <button size="lg" variant="outline" className="hover-scale">
+              <div className="hero-price">{course.price}</div>
+              <div className="hero-buttons">
+                <button className="cta-button">Enroll Now</button>
+                <button className="cta-button cta-outline">
                   Download Syllabus
                 </button>
               </div>
             </div>
 
-            <div className="animate-slide-in-right">
+            <div>
               <img
                 src={course.image}
                 alt={course.title}
-                className="rounded-lg shadow-2xl hover-scale"
+                className="hero-image"
               />
             </div>
           </div>
@@ -180,116 +306,64 @@ const CourseDetail = () => {
       </section>
 
       {/* Technologies */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center font-poppins">
-            Technologies You'll Learn
-          </h2>
-          <div className="flex flex-wrap justify-center gap-4">
-            {course.technologies.map((tech) => (
-              <span
-                key={tech}
-                className="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium hover-scale"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
+      <section className="tech-section">
+        <h2 className="tech-title">Technologies You’ll Learn</h2>
+        <div className="flex flex-wrap gap-4 justify-center">
+          {course.technologies.map((tech, i) => (
+            <span key={i} className="tech-badge">{tech}</span>
+          ))}
         </div>
       </section>
 
       {/* Learning Objectives */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="learning-section">
+        <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div className="animate-slide-in-left">
-              <h2 className="text-3xl font-bold text-gray-900 mb-8 font-poppins">
-                What You'll Learn
-              </h2>
-              <ul className="space-y-4">
-                {course.learning_objectives.map((objective, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <Check className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700">{objective}</span>
-                  </li>
+            <div>
+              <h2 className="learning-title">What You’ll Learn</h2>
+              <ul className="objectives-list">
+                {course.learning_objectives.map((obj, i) => (
+                  <li key={i}><Check /> {obj}</li>
                 ))}
               </ul>
             </div>
-
-            <div className="animate-slide-in-right">
-              <div>
-                <div>
-                  <div>Prerequisites</div>
-                </div>
-                <div>
-                  <ul className="space-y-2">
-                    {course.prerequisites.map((prerequisite, index) => (
-                      <li key={index} className="flex items-center gap-2">
-                        <Code className="w-4 h-4 text-primary" />
-                        <span>{prerequisite}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+            <div className="prerequisites">
+              <h3>Prerequisites</h3>
+              <ul>
+                {course.prerequisites.map((pre, i) => (
+                  <li key={i}><Code /> {pre}</li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
       {/* Curriculum */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center font-poppins">
-            Course Curriculum
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {course.curriculum.map((item, index) => (
-              <div
-                key={index}
-                className="hover-scale hover-glow animate-scale-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div>
-                  <div className="text-lg">Week {item.week}</div>
-                </div>
-                <div>
-                  <p className="text-gray-600">{item.topic}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+      <section className="curriculum-section">
+        <h2 className="curriculum-title">Course Curriculum</h2>
+        <div className="curriculum-grid">
+          {course.curriculum.map((item, i) => (
+            <div key={i} className="curriculum-item">
+              <div>Week {item.week}</div>
+              <div>{item.topic}</div>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="animate-fade-in">
-            <h2 className="text-4xl font-bold mb-4 font-poppins">
-              Ready to Start Learning?
-            </h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto">
-              Join thousands of students who have successfully completed this
-              course and advanced their careers in technology.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button
-                size="lg"
-                variant="secondary"
-                className="text-lg px-8 py-6 hover-scale hover-glow"
-              >
-                Enroll Now for {course.price}
-              </button>
-              <button
-                size="lg"
-                variant="outline"
-                className="text-lg px-8 py-6 hover-scale border-white/30 text-white hover:bg-white/10"
-              >
-                <Link to="/contact">Have Questions?</Link>
-              </button>
-            </div>
-          </div>
+      <section className="cta-section">
+        <h2 className="cta-title">Ready to Start Learning?</h2>
+        <p className="cta-text">
+          Join thousands of students who have successfully completed this
+          course and advanced their careers in technology.
+        </p>
+        <div className="cta-buttons">
+          <button className="cta-button">Enroll Now for {course.price}</button>
+          <button className="cta-button cta-outline">
+            <Link to="/contact">Have Questions?</Link>
+          </button>
         </div>
       </section>
 

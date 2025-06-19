@@ -1,12 +1,9 @@
+import React, { useState } from "react";
 import Navigation from "../../Components/Navigation/Navigation";
 import Footer from "../../Components/Footer/Footer";
-/*import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";*/
 import { Calendar, User, Code } from "lucide-react";
-import { useState } from "react";
-//import { useToast } from "@/hooks/use-toast";
+import "./Contact.css";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -16,17 +13,10 @@ const Contact = () => {
     subject: "",
     message: "",
   });
-//  const { toast } = useToast();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you would typically send the form data to a server
-    /*toast({
-      title: "Message Sent!",
-      description:
-        "Thank you for contacting us. We'll get back to you within 24 hours.",
-    });*/
-    alert("message sent")
+    alert("Message sent!");
     setFormData({
       name: "",
       email: "",
@@ -47,20 +37,20 @@ const Contact = () => {
     {
       title: "Email Us",
       description: "Get in touch via email",
-      detail: "info@techelevate.com",
-      icon: <User className="w-8 h-8 text-primary" />,
+      detail: "elite91221@gmail.com",
+      icon: <User className="icon" />,
     },
     {
       title: "Call Us",
       description: "Speak with our advisors",
-      detail: "+1 (555) 123-4567",
-      icon: <Calendar className="w-8 h-8 text-primary" />,
+      detail: "+91 91086 81021",
+      icon: <Calendar className="icon" />,
     },
     {
       title: "Visit Us",
       description: "Come to our campus",
-      detail: "123 Tech Street, Innovation City, IC 12345",
-      icon: <Code className="w-8 h-8 text-primary" />,
+      detail: "MIG-59, APHB Colony, Guntur, 522005",
+      icon: <Code className="icon" />,
     },
   ];
 
@@ -88,224 +78,137 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="contact-page">
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-br from-purple-50 to-blue-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center animate-fade-in">
-            <h1 className="text-5xl font-bold text-gray-900 mb-6 font-poppins">
-              Get In Touch
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Have questions about our courses or need guidance on your learning
-              path? We're here to help you succeed in your tech career journey.
-            </p>
-          </div>
-        </div>
+      <section className="contact-hero">
+        <h1>Get In Touch</h1>
+        <p>
+          Have questions about our courses or need guidance on your learning
+          path? We're here to help you succeed in your tech career journey.
+        </p>
       </section>
 
       {/* Contact Info Cards */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {contactInfo.map((info, index) => (
-              <div
-                key={index}
-                className="text-center hover-scale hover-glow animate-scale-in"
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
-                <div>
-                  <div className="flex justify-center mb-4">{info.icon}</div>
-                  <div className="text-xl">{info.title}</div>
-                  <p className="text-gray-600">{info.description}</p>
+      <section className="contact-info-cards">
+        {contactInfo.map((info, index) => (
+          <div key={index} className="info-card">
+            <div className="icon-wrapper">{info.icon}</div>
+            <h3>{info.title}</h3>
+            <p>{info.description}</p>
+            <strong>{info.detail}</strong>
+          </div>
+        ))}
+      </section>
+
+      {/* Form and FAQ Section */}
+      <section className="contact-form-section">
+        <div className="contact-form-container">
+          {/* Form */}
+          <div className="form-box">
+            <h2>Send us a Message</h2>
+            <p>Fill out the form below and we'll get back to you.</p>
+            <form onSubmit={handleSubmit}>
+              <div className="form-row">
+                <div className="form-group">
+                  <label>Full Name *</label>
+                  <input
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Your full name"
+                  />
                 </div>
-                <div>
-                  <p className="font-semibold text-gray-900">{info.detail}</p>
+                <div className="form-group">
+                  <label>Email Address *</label>
+                  <input
+                    name="email"
+                    type="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="your.email@example.com"
+                  />
                 </div>
+              </div>
+              <div className="form-row">
+                <div className="form-group">
+                  <label>Phone Number</label>
+                  <input
+                    name="phone"
+                    type="tel"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="+91 91086 81021"
+                  />
+                </div>
+                <div className="form-group">
+                  <label>Subject *</label>
+                  <input
+                    name="subject"
+                    required
+                    value={formData.subject}
+                    onChange={handleChange}
+                    placeholder="Course inquiry, enrollment, etc."
+                  />
+                </div>
+              </div>
+              <div className="form-group full">
+                <label>Message *</label>
+                <textarea
+                  name="message"
+                  required
+                  rows={5}
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Tell us about your goals and how we can help you..."
+                />
+              </div>
+              <button type="submit" className="submit-button">
+                Send Message
+              </button>
+            </form>
+          </div>
+
+          {/* FAQs */}
+          <div className="faq-box">
+            <h2>Frequently Asked Questions</h2>
+            {faqs.map((faq, idx) => (
+              <div key={idx} className="faq-item">
+                <h4>{faq.question}</h4>
+                <p>{faq.answer}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Contact Form and Map */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <div className="animate-slide-in-left">
-              <div>
-                <div>
-                  <div className="text-2xl font-poppins">Send us a Message</div>
-                  <p className="text-gray-600">
-                    Fill out the form below and we'll get back to you as soon as
-                    possible.
-                  </p>
-                </div>
-                <div>
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <label
-                          htmlFor="name"
-                          className="block text-sm font-medium text-gray-700 mb-2"
-                        >
-                          Full Name *
-                        </label>
-                        <input
-                          id="name"
-                          name="name"
-                          type="text"
-                          required
-                          value={formData.name}
-                          onChange={handleChange}
-                          placeholder="Your full name"
-                        />
-                      </div>
-                      <div>
-                        <label
-                          htmlFor="email"
-                          className="block text-sm font-medium text-gray-700 mb-2"
-                        >
-                          Email Address *
-                        </label>
-                        <input
-                          id="email"
-                          name="email"
-                          type="email"
-                          required
-                          value={formData.email}
-                          onChange={handleChange}
-                          placeholder="your.email@example.com"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <label
-                          htmlFor="phone"
-                          className="block text-sm font-medium text-gray-700 mb-2"
-                        >
-                          Phone Number
-                        </label>
-                        <input
-                          id="phone"
-                          name="phone"
-                          type="tel"
-                          value={formData.phone}
-                          onChange={handleChange}
-                          placeholder="+1 (555) 123-4567"
-                        />
-                      </div>
-                      <div>
-                        <label
-                          htmlFor="subject"
-                          className="block text-sm font-medium text-gray-700 mb-2"
-                        >
-                          Subject *
-                        </label>
-                        <input
-                          id="subject"
-                          name="subject"
-                          type="text"
-                          required
-                          value={formData.subject}
-                          onChange={handleChange}
-                          placeholder="Course inquiry, enrollment, etc."
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label
-                        htmlFor="message"
-                        className="block text-sm font-medium text-gray-700 mb-2"
-                      >
-                        Message *
-                      </label>
-                      <textarea
-                        id="message"
-                        name="message"
-                        required
-                        value={formData.message}
-                        onChange={handleChange}
-                        placeholder="Tell us about your goals and how we can help you..."
-                        rows={6}
-                      />
-                    </div>
-
-                    <button
-                      type="submit"
-                      size="lg"
-                      className="w-full hover-scale hover-glow"
-                    >
-                      Send Message
-                    </button>
-                  </form>
-                </div>
-              </div>
-            </div>
-
-            {/* FAQ Section */}
-            <div className="animate-slide-in-right">
-              <h2 className="text-2xl font-bold text-gray-900 mb-8 font-poppins">
-                Frequently Asked Questions
-              </h2>
-              <div className="space-y-6">
-                {faqs.map((faq, index) => (
-                  <div
-                    key={index}
-                    className="hover-glow animate-scale-in"
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    <div>
-                      <div className="text-lg">{faq.question}</div>
-                    </div>
-                    <div>
-                      <p className="text-gray-600">{faq.answer}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="animate-fade-in">
-            <h2 className="text-4xl font-bold mb-4 font-poppins">
-              Ready to Transform Your Career?
-            </h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto">
-              Don't wait – start your journey to becoming a tech professional
-              today. Our expert advisors are standing by to help you choose the
-              perfect course.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button
-                size="lg"
-                variant="secondary"
-                className="text-lg px-8 py-6 hover-scale hover-glow"
-              >
-                Schedule Free Consultation
-              </button>
-              <button
-                size="lg"
-                variant="outline"
-                className="text-lg px-8 py-6 hover-scale border-white/30 text-white hover:bg-white/10"
-              >
-                Browse Courses
-              </button>
-            </div>
-          </div>
+      <section className="cta-section">
+        <h2>Ready to Transform Your Career?</h2>
+        <p>
+          Don’t wait — start your journey to becoming a tech professional today.
+          Our expert advisors are ready to guide you.
+        </p>
+        <div className="cta-buttons">
+          <button className="primary-btn">Schedule Free Consultation</button>
+          <Link to="/courses">
+            <button className="secondary-btn">Browse Courses</button>
+          </Link>
         </div>
       </section>
+
+      {/* Footer Contact Info Section */}
+      <div className="footer-contact-section">
+        <h3 className="footer-section-title">Contact Info</h3>
+        <ul className="footer-contact-info">
+          <li>Email: elite91221@gmail.com</li>
+          <li>Phone: +91 91086 81021</li>
+          <li>Address: MIG-59, APHB Colony, Guntur, 522005</li>
+        </ul>
+      </div>
 
       <Footer />
     </div>
