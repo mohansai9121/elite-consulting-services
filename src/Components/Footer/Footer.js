@@ -57,7 +57,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; 2024 TechElevate Academy. All rights reserved.</p>
+          <p>&copy; 2024 Elite Academy. All rights reserved.</p>
         </div>
       </div>
     </footer>
