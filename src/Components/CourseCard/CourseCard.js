@@ -65,7 +65,7 @@ const CourseCard = ({
             {instructor}
           </div>
         </div>
-         <div className="course-card-price">{price}</div>
+         {/*<div className="course-card-price">{price}</div>*/}
       </div>
 
       <div className="course-card-footer">

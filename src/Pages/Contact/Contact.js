@@ -4,6 +4,7 @@ import Footer from "../../Components/Footer/Footer";
 import { Calendar, User, Code } from "lucide-react";
 import "./Contact.css";
 import { Link } from "react-router-dom";
+import { toast } from "sonner";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,9 +15,34 @@ const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = (e) => {
+  //const accessKey = "42233dcc-0841-48d9-9ff0-987c46bdc1d7";
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Message sent!");
+    const formData1 = new FormData(e.target);
+    formData1.append("access_key", "42233dcc-0841-48d9-9ff0-987c46bdc1d7");
+    const object = Object.fromEntries(formData1);
+    const json = JSON.stringify(object);
+
+    console.log("Form Payload:", json);
+
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: json,
+    }).then((res) => res.json());
+
+    console.log(res);
+
+    if (res.success) {
+      console.log("message sent", res);
+      toast.success("Message sent");
+    } else {
+      alert("Message not sent");
+    }
     setFormData({
       name: "",
       email: "",
@@ -135,13 +161,14 @@ const Contact = () => {
               </div>
               <div className="form-row">
                 <div className="form-group">
-                  <label>Phone Number</label>
+                  <label>Phone Number *</label>
                   <input
                     name="phone"
                     type="tel"
+                    required
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="+91 91086 81021"
+                    placeholder="9108681021"
                   />
                 </div>
                 <div className="form-group">

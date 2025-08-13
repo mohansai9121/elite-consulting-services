@@ -5,16 +5,16 @@ import { useState } from "react";
 /*import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";*/
-import { Search } from "lucide-react";
+//import { Search } from "lucide-react";
 import "./Courses.css";
 import dataAnalysis from "../../assets/data-analysis.jpg";
 import webDevelopment from "../../assets/web-development.jpg";
 import python from "../../assets/python-programming.jpg";
-import dataStructures from "../../assets/data-structures.jpg";
+//import dataStructures from "../../assets/data-structures.jpg";
 import typing from "../../assets/typing.jpg";
 import english from "../../assets/speaking.jpg";
-import interview from "../../assets/interview.webp";
-import machineLearning from "../../assets/machine-learning.webp";
+//import interview from "../../assets/interview.webp";
+//import machineLearning from "../../assets/machine-learning.webp";
 
 const Courses = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -45,7 +45,7 @@ const Courses = () => {
       instructor: "Mohan Sai",
       price: "₹1999",
       image: webDevelopment,
-      technologies: ["React", "Node.js", "MongoDB", "AWS"],
+      technologies: ["MongoDB", "Express", "React", "Node.js"],
       category: "Web Development",
     },
     {
@@ -58,10 +58,10 @@ const Courses = () => {
       instructor: "Mohan Sai",
       price: "₹1499",
       image: python,
-      technologies: ["Python", "Django", "Flask", "APIs", "Data Structures"],
+      technologies: ["Python", "Data Structures", "Algorithms"],
       category: "Programming",
     },
-    {
+    /*{
       id: "data-structures",
       title: "Data Structures & Algorithms",
       description:
@@ -73,7 +73,7 @@ const Courses = () => {
       image: dataStructures,
       technologies: ["Python", "C", "Algorithms"],
       category: "Computer Science",
-    },
+    },*/
     {
       id: "typing-course",
       title: "Professional Typing & Productivity",
@@ -100,7 +100,7 @@ const Courses = () => {
       technologies: ["English", "Communication", "Presentation"],
       category: "Language",
     },
-    {
+    /*{
       id: "interview-prep",
       title: "Technical Interview Preparation",
       description:
@@ -112,20 +112,7 @@ const Courses = () => {
       image: interview,
       technologies: ["Algorithms", "System Design", "Coding"],
       category: "Career",
-    },
-    {
-      id: "machine-learning",
-      title: "Machine Learning Fundamentals",
-      description:
-        "Learn ML algorithms, neural networks, and build intelligent applications from scratch",
-      duration: "12 weeks",
-      level: "Advanced",
-      instructor: "Mohan Sai",
-      price: "₹1499",
-      image: machineLearning,
-      technologies: ["Python", "TensorFlow", "Scikit-learn", "Neural Networks"],
-      category: "Data Science",
-    },
+    },*/
   ];
 
   const filteredCourses = courses.filter((course) => {
@@ -140,7 +127,7 @@ const Courses = () => {
     return matchesSearch && matchesLevel && matchesCategory;
   });
 
-  const categories = [...new Set(courses.map((course) => course.category))];
+  /*const categories = [...new Set(courses.map((course) => course.category))];*/
 
   return (
     <div className="courses-container">
@@ -154,7 +141,7 @@ const Courses = () => {
 
       {/* Filters */}
       <section className="filters-section">
-        <div className="filters-wrapper">
+        {/*<div className="filters-wrapper">
           <div className="relative">
             <Search className="icon-search" />
             <input
@@ -188,7 +175,7 @@ const Courses = () => {
               </option>
             ))}
           </select>
-        </div>
+        </div>*/}
       </section>
 
       {/* Courses Grid */}

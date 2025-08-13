@@ -285,7 +285,7 @@ const CourseDetail = () => {
                 <div><User /> {course.instructor}</div>
                 <div><Book /> {course.level}</div>
               </div>
-              <div className="hero-price">{course.price}</div>
+              {/*<div className="hero-price">{course.price}</div>*/}
               <div className="hero-buttons">
                 <button className="cta-button">Enroll Now</button>
                 <button className="cta-button cta-outline">
@@ -360,7 +360,7 @@ const CourseDetail = () => {
           course and advanced their careers in technology.
         </p>
         <div className="cta-buttons">
-          <button className="cta-button">Enroll Now for {course.price}</button>
+          <button className="cta-button">Enroll Now</button>
           <button className="cta-button cta-outline">
             <Link to="/contact">Have Questions?</Link>
           </button>
