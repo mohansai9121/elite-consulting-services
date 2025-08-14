@@ -8,6 +8,8 @@ import Contact from "./Pages/Contact/Contact";
 import CourseDetail from "./Pages/CourseDetail/CourseDetail";
 import NotFound from "./Pages/NotFound/NotFound";
 
+import "rsuite/dist/rsuite.min.css";
+
 const queryClient = new QueryClient();
 
 const App = () => (

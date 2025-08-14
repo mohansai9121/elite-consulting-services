@@ -21,7 +21,7 @@ const Home = () => {
           <br />
           <h1 className="home-title">
             Train for greatness{" "}
-            <span className="home-gradient-text"> and Skill up</span>
+            <span className="home-gradient-text"> and Up Skill</span>
           </h1>
 
           <p className="home-subtitle">
@@ -42,13 +42,13 @@ const Home = () => {
 
           <div className="home-stats">
             <div className="home-stat">
-              <div className="home-stat-number">10+</div>
+              <div className="home-stat-number">30+</div>
               <div className="home-stat-label">Students Trained</div>
             </div>
-            <div className="home-stat">
+            {/*<div className="home-stat">
               <div className="home-stat-number">95%</div>
               <div className="home-stat-label">Job Placement Rate</div>
-            </div>
+            </div>*/}
             <div className="home-stat">
               <div className="home-stat-number">2</div>
               <div className="home-stat-label">Expert Instructors</div>

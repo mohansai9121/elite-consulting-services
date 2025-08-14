@@ -61,7 +61,7 @@
   animation-delay: 0.5s;
 }
 
-.floating-5{
+.floating-5 {
   top: 15rem;
   left: 35rem;
   width: 9rem;
@@ -101,7 +101,7 @@
   color: white;
   margin-bottom: 1.5rem;
   margin-top: 1vh;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 @media (min-width: 768px) {
@@ -202,7 +202,7 @@
 
 @media (min-width: 768px) {
   .home-stats {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -258,7 +258,8 @@
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {
@@ -311,7 +312,8 @@
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {
