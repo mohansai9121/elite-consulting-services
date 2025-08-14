@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";*/
 //import { Search } from "lucide-react";
 import "./Courses.css";
+import computerSkills from "../../assets/computer-skills.jpg"
 import dataAnalysis from "../../assets/data-analysis.jpg";
 import webDevelopment from "../../assets/web-development.jpg";
 import python from "../../assets/python-programming.jpg";
@@ -22,6 +23,19 @@ const Courses = () => {
   const [categoryFilter, setCategoryFilter] = useState("all");
 
   const courses = [
+    {
+    id: "computer-skills",
+    title: "Basic to Advanced Computer Skills",
+    description:
+      "Gain confidence in using computers, from beginner-level tasks like file management and typing to advanced skills including cloud storage, online safety, and productivity tools.",
+    duration: "8 weeks",
+    level: "Beginner to Intermediate",
+    instructor: "Salman Khan",
+    price: "₹1499",
+    image: computerSkills, // 🔸 Make sure this image is imported
+    technologies: ["Windows", "MS Office", "Google Drive", "Typing", "Cybersecurity"],
+    category: "Skills",
+  },
     {
       id: "data-analysis",
       title: "Data Analysis & Visualization",

@@ -5,17 +5,54 @@ import { Calendar, User, Code, Check, Book } from "lucide-react";
 import dataAnalysis from "../../assets/data-analysis.jpg";
 import webDevelopment from "../../assets/web-development.jpg";
 import python from "../../assets/python-programming.jpg";
-import dataStructures from "../../assets/data-structures.jpg";
+import computerSkills from "../../assets/computer-skills.jpg";
+//import dataStructures from "../../assets/data-structures.jpg";
 import typing from "../../assets/typing.jpg";
 import english from "../../assets/speaking.jpg";
-import interview from "../../assets/interview.webp";
-import machineLearning from "../../assets/machine-learning.webp";
+//import interview from "../../assets/interview.webp";
+//import machineLearning from "../../assets/machine-learning.webp";
 import "./CourseDetail.css"; // Ensure this file contains your converted CSS
 
 const CourseDetail = () => {
   const { courseId } = useParams();
 
   const courseData = {
+    "computer-skills": {
+      title: "Basic to Advanced Computer Skills",
+      description:
+        "Gain confidence in using computers, from beginner-level tasks like file management and typing to advanced skills including cloud storage, online safety, and productivity tools.",
+      duration: "8 weeks",
+      level: "Beginner to Intermediate",
+      instructor: "Salman Khan",
+      price: "₹1499",
+      image: computerSkills, // 🔸 Make sure to import or define this image asset
+      technologies: [
+        "Windows",
+        "MS Office",
+        "Google Drive",
+        "Typing",
+        "Cybersecurity",
+      ],
+      prerequisites: ["Basic reading and writing skills"],
+      learning_objectives: [
+        "Understand basic computer components and operating systems",
+        "Master typing, file management, and internet browsing",
+        "Use productivity tools like Microsoft Word, Excel, and PowerPoint",
+        "Utilize cloud services such as Google Drive",
+        "Stay safe online with basic cybersecurity practices",
+        "Troubleshoot common computer issues",
+      ],
+      curriculum: [
+        { week: 1, topic: "Introduction to Computers & Operating Systems" },
+        { week: 2, topic: "Typing Practice & File Management" },
+        { week: 3, topic: "Internet Basics & Web Browsing" },
+        { week: 4, topic: "Email & Communication Tools" },
+        { week: 5, topic: "MS Word, Excel & PowerPoint" },
+        { week: 6, topic: "Google Drive & Cloud Storage" },
+        { week: 7, topic: "Cybersecurity Essentials" },
+        { week: 8, topic: "Troubleshooting & Final Assessment" },
+      ],
+    },
     "data-analysis": {
       title: "Data Analysis & Visualization",
       description:
@@ -60,7 +97,10 @@ const CourseDetail = () => {
       price: "₹1999",
       image: webDevelopment,
       technologies: ["React", "Node.js", "MongoDB", "AWS"],
-      prerequisites: ["Basic computer literacy", "No prior programming experience"],
+      prerequisites: [
+        "Basic computer literacy",
+        "No prior programming experience",
+      ],
       learning_objectives: [
         "Build responsive UIs using HTML, CSS, JS",
         "Master React and its ecosystem",
@@ -117,7 +157,7 @@ const CourseDetail = () => {
         { week: 12, topic: "Final Capstone Project" },
       ],
     },
-    "data-structures": {
+    /*"data-structures": {
       title: "Data Structures & Algorithms",
       description:
         "Master fundamental computer science concepts essential for technical interviews",
@@ -144,7 +184,7 @@ const CourseDetail = () => {
         { week: 7, topic: "Dynamic Programming" },
         { week: 8, topic: "Mock Interviews" },
       ],
-    },
+    },*/
     "typing-course": {
       title: "Professional Typing & Productivity",
       description:
@@ -195,7 +235,7 @@ const CourseDetail = () => {
         { week: 4, topic: "Mock Business Meetings" },
       ],
     },
-    "interview-prep": {
+    /*"interview-prep": {
       title: "Technical Interview Preparation",
       description:
         "Ace your tech interviews with coding challenges, system design, and behavioral questions",
@@ -217,8 +257,8 @@ const CourseDetail = () => {
         { week: 3, topic: "Behavioral Interview Prep" },
         { week: 4, topic: "Mock Interview Simulations" },
       ],
-    },
-    "machine-learning": {
+    },*/
+    /*"machine-learning": {
       title: "Machine Learning Fundamentals",
       description:
         "Learn ML algorithms, neural networks, and build intelligent applications from scratch",
@@ -249,7 +289,7 @@ const CourseDetail = () => {
         { week: 11, topic: "ML Project Development" },
         { week: 12, topic: "Deployment of ML Models" },
       ],
-    },
+    },*/
   };
 
   const course = courseData[courseId];
@@ -281,9 +321,15 @@ const CourseDetail = () => {
               <h1 className="hero-title">{course.title}</h1>
               <p className="hero-description">{course.description}</p>
               <div className="hero-meta">
-                <div><Calendar /> {course.duration}</div>
-                <div><User /> {course.instructor}</div>
-                <div><Book /> {course.level}</div>
+                <div>
+                  <Calendar /> {course.duration}
+                </div>
+                <div>
+                  <User /> {course.instructor}
+                </div>
+                <div>
+                  <Book /> {course.level}
+                </div>
               </div>
               {/*<div className="hero-price">{course.price}</div>*/}
               <div className="hero-buttons">
@@ -310,7 +356,9 @@ const CourseDetail = () => {
         <h2 className="tech-title">Technologies You’ll Learn</h2>
         <div className="flex flex-wrap gap-4 justify-center">
           {course.technologies.map((tech, i) => (
-            <span key={i} className="tech-badge">{tech}</span>
+            <span key={i} className="tech-badge">
+              {tech}
+            </span>
           ))}
         </div>
       </section>
@@ -323,7 +371,9 @@ const CourseDetail = () => {
               <h2 className="learning-title">What You’ll Learn</h2>
               <ul className="objectives-list">
                 {course.learning_objectives.map((obj, i) => (
-                  <li key={i}><Check /> {obj}</li>
+                  <li key={i}>
+                    <Check /> {obj}
+                  </li>
                 ))}
               </ul>
             </div>
@@ -331,7 +381,9 @@ const CourseDetail = () => {
               <h3>Prerequisites</h3>
               <ul>
                 {course.prerequisites.map((pre, i) => (
-                  <li key={i}><Code /> {pre}</li>
+                  <li key={i}>
+                    <Code /> {pre}
+                  </li>
                 ))}
               </ul>
             </div>
@@ -356,8 +408,8 @@ const CourseDetail = () => {
       <section className="cta-section">
         <h2 className="cta-title">Ready to Start Learning?</h2>
         <p className="cta-text">
-          Join thousands of students who have successfully completed this
-          course and advanced their careers in technology.
+          Join thousands of students who have successfully completed this course
+          and advanced their careers in technology.
         </p>
         <div className="cta-buttons">
           <button className="cta-button">Enroll Now</button>
