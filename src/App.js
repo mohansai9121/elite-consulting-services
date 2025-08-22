@@ -9,6 +9,7 @@ import CourseDetail from "./Pages/CourseDetail/CourseDetail";
 import NotFound from "./Pages/NotFound/NotFound";
 
 import "rsuite/dist/rsuite.min.css";
+import Services from "./Pages/Services/Services";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => (
         <Route path="/courses" element={<Courses />} />
         <Route path="/courses/:courseId" element={<CourseDetail />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/services" element={<Services/>} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
