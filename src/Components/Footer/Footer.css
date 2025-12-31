@@ -128,3 +128,14 @@
   text-align: center;
   color: #d1d5db;
 }
+.location-style{
+  text-decoration: none;
+  transition: all 1s ease;
+  color: white;
+  display: inline-block;
+}
+.location-style:hover{
+  transform: scale(1.1);
+  text-decoration: underline;
+  cursor: pointer;
+}
